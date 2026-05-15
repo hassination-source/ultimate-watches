@@ -445,61 +445,22 @@
       <a href="#" class="btn-gold">Boka privat värdering →</a>
     </div>
 
-    <!-- AI-värdering: Byt action-URL mot din Formspree-endpoint (https://formspree.io/f/DITT_ID) -->
-    <form class="valuation" action="https://formspree.io/f/REPLACE_WITH_FORMSPREE_ID" method="POST">
-      <input type="hidden" name="_subject" value="Ny AI-värderingsförfrågan — ultimatewatches.se" />
-      <input type="hidden" name="_replyto" value="info@ultimatewatches.se" />
-      <h3>AI-värdering på 60 sekunder</h3>
-      <div class="v-sub">Fyll i detaljerna. Få en indikativ värdering direkt — följt av ett personligt bud från en av våra specialister.</div>
-      <div class="field">
-        <label>Märke</label>
-        <select name="marke" required>
-          <option value="">Välj märke</option>
-          <option>Rolex</option>
-          <option>Patek Philippe</option>
-          <option>Audemars Piguet</option>
-          <option>Richard Mille</option>
-          <option>A. Lange &amp; Söhne</option>
-          <option>Vacheron Constantin</option>
-          <option>Annat</option>
-        </select>
+    <div class="valuation">
+      <h3>Konfidentiell värdering<br>inom 24 timmar</h3>
+      <div class="v-sub">Skicka oss bilder och detaljer om klockan — på WhatsApp eller mail. En av våra specialister återkommer personligen med ett bud, alltid under NDA.</div>
+
+      <div style="display:flex;flex-direction:column;gap:14px;margin:32px 0 8px">
+        <a href="https://wa.me/46735116589?text=Hej%2C%20jag%20vill%20v%C3%A4rdera%20min%20klocka.%0AM%C3%A4rke%3A%20%0AModell%2FReferens%3A%20%0A%C3%85rsmodell%3A%20%0ASkick%3A%20%0AFull%20set%3F%3A%20" target="_blank" rel="noopener" class="btn-gold" style="width:100%;justify-content:center;padding:20px;font-size:12px">
+          <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;margin-right:6px"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.88 14.11c-.25.7-1.46 1.34-2.04 1.41-.55.08-1.22.11-1.98-.12-.46-.15-1.05-.34-1.8-.66-3.17-1.37-5.25-4.57-5.41-4.78-.16-.21-1.3-1.73-1.3-3.3 0-1.57.82-2.34 1.12-2.67.29-.32.64-.4.86-.4.21 0 .43 0 .61.01.2.01.47-.08.73.56.25.64.87 2.21.94 2.37.08.16.13.35.03.56-.1.21-.16.34-.31.52-.16.18-.32.4-.46.54-.15.15-.31.31-.13.61.18.3.79 1.3 1.7 2.11 1.17 1.04 2.16 1.37 2.46 1.52.3.15.48.12.66-.08.18-.2.76-.89.97-1.19.2-.3.41-.25.68-.15.27.11 1.71.81 2 .95.29.15.49.23.56.35.08.11.08.66-.17 1.36z"/></svg>
+          WhatsApp värdering →
+        </a>
+        <a href="mailto:info@ultimatewatches.se?subject=V%C3%A4rderingsf%C3%B6rfr%C3%A5gan&body=Hej%2C%0A%0AJag%20vill%20v%C3%A4rdera%20min%20klocka.%0A%0AM%C3%A4rke%3A%20%0AModell%2FReferens%3A%20%0A%C3%85rsmodell%3A%20%0ASkick%3A%20%0AFull%20set%3F%3A%20%0A%0AMed%20v%C3%A4nlig%20h%C3%A4lsning%2C" class="btn-ghost" style="width:100%;justify-content:center;padding:20px;font-size:12px">
+          Email värdering →
+        </a>
       </div>
-      <div class="row-2">
-        <div class="field">
-          <label>Modell / Referens</label>
-          <input type="text" name="modell" placeholder="Ex. 116500LN" required />
-        </div>
-        <div class="field">
-          <label>Årsmodell</label>
-          <input type="text" name="arsmodell" placeholder="Ex. 2022" />
-        </div>
-      </div>
-      <div class="row-2">
-        <div class="field">
-          <label>Skick</label>
-          <select name="skick">
-            <option>Mint / Oanvänd</option>
-            <option>Utmärkt</option>
-            <option>Gott skick</option>
-            <option>Servicebehov</option>
-          </select>
-        </div>
-        <div class="field">
-          <label>Full set?</label>
-          <select name="full_set">
-            <option>Ja – låda, papper, garanti</option>
-            <option>Delvis</option>
-            <option>Endast klockan</option>
-          </select>
-        </div>
-      </div>
-      <div class="field">
-        <label>Telefon eller email för svar</label>
-        <input type="text" name="kontakt" placeholder="+46 73 123 45 67 eller email" required />
-      </div>
-      <button class="btn-gold" type="submit">Få min värdering →</button>
-      <div class="v-trust">100% diskret · NDA signeras automatiskt</div>
-    </form>
+
+      <div class="v-trust">100% diskret · NDA · Svar inom 24 timmar</div>
+    </div>
   </div>
 </section>
 
@@ -734,9 +695,7 @@
       </div>
     </div>
 
-    <!-- Kontaktformulär: Byt action-URL mot din Formspree-endpoint (https://formspree.io/f/DITT_ID) -->
-    <form class="contact-form" action="https://formspree.io/f/REPLACE_WITH_FORMSPREE_ID" method="POST">
-      <input type="hidden" name="_subject" value="Ny förfrågan via ultimatewatches.se" />
+    <form class="contact-form" id="contactForm">
       <h3>Boka privat möte</h3>
       <div class="field">
         <label>Namn</label>
@@ -794,7 +753,7 @@
         <h4>Tjänster</h4>
         <ul>
           <li><a href="#">Sälj din klocka</a></li>
-          <li><a href="#">AI-värdering</a></li>
+          <li><a href="#">Konfidentiell värdering</a></li>
           <li><a href="#">Concierge</a></li>
           <li><a href="#">Investeringsrådgivning</a></li>
           <li><a href="#">Service &amp; restaurering</a></li>
@@ -837,6 +796,24 @@
     if(window.scrollY>40){nav.style.background='rgba(10,10,10,.92)'}
     else{nav.style.background='rgba(10,10,10,.72)'}
   });
+
+  // Contact form → mailto (öppnar email-klient med förifyllt innehåll)
+  const cf=document.getElementById('contactForm');
+  if(cf){
+    cf.addEventListener('submit',function(e){
+      e.preventDefault();
+      const f=e.target;
+      const subj='Förfrågan via ultimatewatches.se — '+(f.intresse.value||'Allmänt');
+      const body=
+        'Namn: '+f.namn.value+'\n'+
+        'Telefon: '+f.telefon.value+'\n'+
+        'Email: '+f.email.value+'\n'+
+        'Intresse: '+f.intresse.value+'\n\n'+
+        'Meddelande:\n'+f.meddelande.value+'\n\n'+
+        '— Skickat via ultimatewatches.se';
+      window.location.href='mailto:info@ultimatewatches.se?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
+    });
+  }
 </script>
 
 </body>
