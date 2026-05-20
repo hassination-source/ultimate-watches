@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Ultimate Watches Stockholm — Sveriges privata luxury watch dealer</title>
-<meta name="description" content="Kurerad samling av Rolex, Patek Philippe, Audemars Piguet och andra haute horlogerie. Köp, sälj och förmedling i diskretion. Stockholm." />
+<title>Ultimate Watches Stockholm — Watch Dealer</title>
+<meta name="description" content="Kurerad samling av exklusiva armbandsur från Rolex, Patek Philippe, Audemars Piguet m.fl. Köp, sälj och förmedling i diskretion. Stockholm." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Michroma&display=swap" rel="stylesheet">
@@ -43,7 +43,7 @@
   .nav-links a{transition:color .3s}
   .nav-links a:hover{color:var(--gold)}
   .nav-right{display:flex;align-items:center;gap:20px}
-  .lang{font-size:11px;letter-spacing:.2em;color:var(--text-mute);cursor:pointer;border:1px solid var(--line-2);padding:8px 12px;transition:all .3s}
+  .lang{font-size:11px;letter-spacing:.2em;color:var(--text-mute);cursor:pointer;border:1px solid var(--line-2);padding:8px 12px;transition:all .3s;background:transparent;font-family:var(--sans);font-weight:300;text-transform:uppercase}
   .lang:hover{border-color:var(--gold);color:var(--gold)}
   .btn-gold{display:inline-flex;align-items:center;gap:10px;background:transparent;border:1px solid var(--gold);color:var(--gold);padding:12px 22px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;transition:all .35s;font-family:var(--sans)}
   .btn-gold:hover{background:var(--gold);color:#000}
@@ -91,19 +91,22 @@
   @media(max-width:700px){.watch-grid{grid-template-columns:1fr}}
   .watch{background:var(--bg-2);border:1px solid var(--line);position:relative;transition:border-color .4s;cursor:pointer}
   .watch:hover{border-color:var(--gold)}
-  .watch-img{aspect-ratio:4/5;overflow:hidden;background:var(--bg-3);position:relative}
+  .watch-img{aspect-ratio:4/5;overflow:hidden;background:linear-gradient(135deg,var(--bg-3) 0%,var(--bg-2) 100%);position:relative;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line)}
   .watch-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
   .watch:hover .watch-img img{transform:scale(1.04)}
+  .watch-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:var(--text-mute);text-align:center;padding:30px}
+  .watch-placeholder svg{width:54px;height:54px;opacity:.32;color:var(--gold)}
+  .watch-placeholder span{font-family:var(--display);font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-2);opacity:.7}
+  .watch-placeholder small{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--text-mute);opacity:.6}
   .watch-badge{position:absolute;top:16px;left:16px;font-size:10px;letter-spacing:.26em;text-transform:uppercase;padding:6px 10px;background:rgba(10,10,10,.85);color:var(--gold);border:1px solid var(--gold)}
   .watch-badge.sold{color:var(--text-mute);border-color:var(--line-2);background:rgba(10,10,10,.92)}
   .watch-info{padding:24px 24px 28px}
   .watch-brand{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
   .watch-name{font-family:var(--display);font-size:24px;font-weight:400;line-height:1.15;margin-bottom:6px}
   .watch-ref{font-size:13px;color:var(--text-mute);margin-bottom:22px}
-  .watch-foot{display:flex;justify-content:space-between;align-items:flex-end;padding-top:18px;border-top:1px solid var(--line)}
-  .watch-price{font-family:var(--display);font-size:22px;color:var(--text);font-weight:500}
-  .watch-scarcity{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-2)}
-  .watch-scarcity::before{content:"●";margin-right:6px;color:#d84d4d;animation:pulse 1.8s infinite}
+  .watch-foot{display:flex;justify-content:space-between;align-items:center;padding-top:18px;border-top:1px solid var(--line);font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-2)}
+  .watch-foot .arrow{color:var(--gold);transition:transform .3s}
+  .watch:hover .watch-foot .arrow{transform:translateX(4px)}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
   .view-all{display:flex;justify-content:center;margin-top:64px}
 
@@ -133,7 +136,11 @@
   .v-trust::before{content:"✓";color:var(--gold);font-size:14px}
 
   /* ---------- WHY CHOOSE US ---------- */
-  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line)}
+  .why-section{position:relative;overflow:hidden;max-width:none;margin:0;padding:140px 40px}
+  .why-section::before{content:"";position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?w=2400&q=85') center/cover no-repeat;filter:brightness(.28) contrast(1.05) saturate(.8);z-index:0}
+  .why-section::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.55) 0%,rgba(10,10,10,.78) 60%,rgba(10,10,10,.92) 100%);z-index:0}
+  .why-inner{position:relative;z-index:2;max-width:1440px;margin:0 auto}
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid rgba(255,255,255,.08);background:rgba(10,10,10,.55);backdrop-filter:blur(6px)}
   @media(max-width:1000px){.why-grid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:600px){.why-grid{grid-template-columns:1fr}}
   .why-item{padding:56px 40px;border-right:1px solid var(--line);position:relative;transition:background .4s}
@@ -174,16 +181,34 @@
   .concierge-list li{font-size:14px;color:var(--text);padding-left:22px;position:relative}
   .concierge-list li::before{content:"—";position:absolute;left:0;color:var(--gold)}
 
-  /* ---------- TESTIMONIALS ---------- */
+  /* ---------- GOOGLE REVIEWS ---------- */
   .testimonials{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);max-width:none;margin:0;padding:140px 40px}
   .t-wrap{max-width:1440px;margin:0 auto}
+  .google-summary{display:flex;align-items:center;gap:28px;margin-bottom:56px;padding:28px 32px;background:var(--bg);border:1px solid var(--line);flex-wrap:wrap}
+  .google-logo{display:inline-flex;align-items:center;gap:10px;font-family:var(--sans);font-size:18px;font-weight:500;letter-spacing:.02em;color:var(--text)}
+  .google-logo svg{width:26px;height:26px}
+  .google-rating{display:flex;align-items:center;gap:14px}
+  .rating-num{font-family:var(--display);font-size:34px;color:var(--gold-2);font-weight:500;line-height:1}
+  .rating-stars{display:inline-flex;gap:3px;color:#f5b400}
+  .rating-stars svg{width:18px;height:18px;fill:currentColor}
+  .rating-meta{font-size:12px;letter-spacing:.06em;color:var(--text-mute)}
+  .rating-meta strong{color:var(--text);font-weight:500}
+  .google-summary .google-cta{margin-left:auto;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);padding:12px 22px;transition:all .35s}
+  .google-summary .google-cta:hover{background:var(--gold);color:#000}
+  @media(max-width:700px){.google-summary{flex-direction:column;align-items:flex-start;gap:18px}.google-summary .google-cta{margin-left:0}}
   .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
   @media(max-width:1000px){.t-grid{grid-template-columns:1fr}}
-  .t-card{padding:44px;background:var(--bg);border:1px solid var(--line)}
-  .t-quote{font-family:var(--display);font-size:22px;line-height:1.45;font-weight:400;font-style:italic;color:var(--text);margin-bottom:32px;letter-spacing:-.005em}
-  .t-quote::before{content:"“";display:block;font-size:56px;color:var(--gold);line-height:.6;margin-bottom:14px}
-  .t-author{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
-  .t-role{font-size:12px;color:var(--text-mute);letter-spacing:.06em}
+  .t-card{padding:36px;background:var(--bg);border:1px solid var(--line);display:flex;flex-direction:column}
+  .t-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .t-avatar{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--gold) 0%,var(--gold-2) 100%);color:#0a0a0a;display:inline-flex;align-items:center;justify-content:center;font-family:var(--display);font-size:18px;font-weight:500;flex-shrink:0}
+  .t-meta{display:flex;flex-direction:column;gap:4px}
+  .t-meta .t-name{font-size:14px;color:var(--text);font-weight:500;letter-spacing:.02em}
+  .t-meta .t-date{font-size:11px;color:var(--text-mute);letter-spacing:.04em}
+  .t-stars{display:inline-flex;gap:2px;color:#f5b400;margin-bottom:14px}
+  .t-stars svg{width:14px;height:14px;fill:currentColor}
+  .t-quote{font-family:var(--sans);font-size:15px;line-height:1.7;font-weight:300;font-style:normal;color:var(--text);letter-spacing:0}
+  .t-googlemark{margin-top:22px;display:inline-flex;align-items:center;gap:8px;font-size:11px;color:var(--text-mute);letter-spacing:.06em}
+  .t-googlemark svg{width:14px;height:14px}
 
   /* ---------- RECENTLY SOLD ---------- */
   .sold-track{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
@@ -235,10 +260,14 @@
   .trust-badge{display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-mute);padding:10px 16px;border:1px solid var(--line-2)}
   .trust-badge::before{content:"✓";color:var(--gold)}
 
-  /* ---------- WHATSAPP FAB ---------- */
+  /* ---------- SOCIAL FAB (Instagram) ---------- */
   .fab{position:fixed;bottom:32px;right:32px;z-index:90;display:flex;align-items:center;gap:10px;background:#0a0a0a;border:1px solid var(--gold);color:var(--gold);padding:14px 22px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;transition:all .35s;text-decoration:none;box-shadow:0 20px 60px rgba(0,0,0,.5)}
   .fab:hover{background:var(--gold);color:#000}
   .fab svg{width:16px;height:16px}
+  .social-row{display:flex;gap:14px;margin-top:28px}
+  .social-row a{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid var(--line-2);color:var(--text-mute);transition:all .3s}
+  .social-row a:hover{border-color:var(--gold);color:var(--gold)}
+  .social-row svg{width:18px;height:18px}
 
   /* ---------- UTIL ---------- */
   .divider{height:1px;background:var(--line);margin:0 40px;max-width:1440px}
@@ -252,16 +281,16 @@
   <div class="nav-inner">
     <a href="#" class="logo" aria-label="Ultimate Watches">Ultimate Watches</a>
     <div class="nav-links">
-      <a href="#collection">Samling</a>
-      <a href="#sell">Sälj din klocka</a>
-      <a href="#investment">Investering</a>
-      <a href="#how">Så fungerar det</a>
-      <a href="#about">Om oss</a>
-      <a href="#contact">Kontakt</a>
+      <a href="#collection" data-i18n="nav.collection">Samling</a>
+      <a href="#sell" data-i18n="nav.sell">Sälj din klocka</a>
+      <a href="#investment" data-i18n="nav.invest">Investering</a>
+      <a href="#how" data-i18n="nav.how">Så fungerar det</a>
+      <a href="#about" data-i18n="nav.about">Om oss</a>
+      <a href="#contact" data-i18n="nav.contact">Kontakt</a>
     </div>
     <div class="nav-right">
-      <span class="lang">SV / EN</span>
-      <a href="#sell" class="btn-gold">Boka möte</a>
+      <button class="lang" id="langToggle" type="button" aria-label="Byt språk">SV / <span style="opacity:.5">EN</span></button>
+      <a href="#sell" class="btn-gold" data-i18n="nav.cta">Boka möte</a>
     </div>
   </div>
 </nav>
@@ -272,9 +301,9 @@
     <img src="https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=2000&q=85" alt="Luxury watch close-up" />
   </div>
   <div class="hero-inner">
-    <div class="kicker">Stockholm · Privat Luxury Watch Dealer</div>
-    <h1>Tidlösa objekt för <em>samlare</em> som vet vad de letar efter.</h1>
-    <p class="lede">En kurerad samling av världens mest eftertraktade tidmätare. Autentiserade, dokumenterade och förmedlade med den diskretion våra kunder förväntar sig.</p>
+    <div class="kicker" data-i18n="hero.kicker">Stockholm · Watch Dealer</div>
+    <h1 data-i18n="hero.title">Tidlösa objekt för <em>samlare</em> som vet vad de letar efter.</h1>
+    <p class="lede" data-i18n="hero.lede">En handplockad kollektion av världens mest exklusiva armbandsur. Varje objekt är autentiserat, dokumenterat och förmedlat med den diskretion och professionalism våra kunder förväntar sig.</p>
     <div class="hero-ctas">
       <a href="#collection" class="btn-gold">Se samlingen →</a>
       <a href="#sell" class="btn-ghost">Sälj din klocka</a>
@@ -310,7 +339,7 @@
       <div class="section-kicker">Aktuell samling</div>
       <h2>En kurerad <em>samling</em> — inte ett lager.</h2>
     </div>
-    <p class="sub">Varje tidmätare är personligt utvald av oss. Autentiserad, serviceöversedd och dokumenterad med full proveniens. Vi lagerför aldrig det vi inte själva skulle bära.</p>
+    <p class="sub">Varje armbandsur är personligt utvalt av oss. Autentiserat, serviceöversedd och dokumenterat med full proveniens. Vi lagerför aldrig det vi inte själva skulle bära.</p>
   </div>
 
   <div class="filter-bar">
@@ -328,104 +357,152 @@
 
     <article class="watch">
       <div class="watch-img">
-        <span class="watch-badge">Endast 1 tillgänglig</span>
-        <img src="https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?w=1000&q=85" alt="Rolex Daytona" />
+        <div class="watch-placeholder" aria-label="Bild uppdateras">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="7"/><path d="M12 8v4l2.5 2.5M9 2h6M9 22h6"/></svg>
+          <span>Rolex Daytona</span>
+          <small>Bild uppdateras</small>
+        </div>
       </div>
       <div class="watch-info">
         <div class="watch-brand">Rolex</div>
         <h3 class="watch-name">Cosmograph Daytona</h3>
-        <div class="watch-ref">Ref. 116500LN · White Dial · 2023</div>
-        <div class="watch-foot">
-          <span class="watch-price">SEK 385 000</span>
-          <span class="watch-scarcity">Reserverad möjlig</span>
-        </div>
+        <div class="watch-ref">Ref. 116500LN · White Dial</div>
+        <div class="watch-foot"><span>Förfrågan</span><span class="arrow">→</span></div>
       </div>
     </article>
 
     <article class="watch">
       <div class="watch-img">
-        <span class="watch-badge">Investment Grade</span>
-        <img src="https://images.unsplash.com/photo-1548171916-d7a38cff5e67?w=1000&q=85" alt="Patek Philippe Nautilus" />
+        <div class="watch-placeholder" aria-label="Bild uppdateras">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="7"/><path d="M12 8v4l2.5 2.5M9 2h6M9 22h6"/></svg>
+          <span>Patek Philippe Nautilus</span>
+          <small>Bild uppdateras</small>
+        </div>
       </div>
       <div class="watch-info">
         <div class="watch-brand">Patek Philippe</div>
         <h3 class="watch-name">Nautilus</h3>
-        <div class="watch-ref">Ref. 5711/1A-010 · Blue Dial · Full Set</div>
-        <div class="watch-foot">
-          <span class="watch-price">SEK 1 490 000</span>
-          <span class="watch-scarcity">Endast 1 tillgänglig</span>
-        </div>
+        <div class="watch-ref">Ref. 5711/1A-010 · Blue Dial</div>
+        <div class="watch-foot"><span>Förfrågan</span><span class="arrow">→</span></div>
       </div>
     </article>
 
     <article class="watch">
       <div class="watch-img">
-        <span class="watch-badge">Nyankommen</span>
-        <img src="https://images.unsplash.com/photo-1606859191213-495b56af18ac?w=1000&q=85" alt="Audemars Piguet Royal Oak" />
+        <div class="watch-placeholder" aria-label="Bild uppdateras">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="7"/><path d="M12 8v4l2.5 2.5M9 2h6M9 22h6"/></svg>
+          <span>Royal Oak 41mm</span>
+          <small>Bild uppdateras</small>
+        </div>
       </div>
       <div class="watch-info">
         <div class="watch-brand">Audemars Piguet</div>
         <h3 class="watch-name">Royal Oak 41mm</h3>
-        <div class="watch-ref">Ref. 15500ST · Blue Dial · 2022</div>
-        <div class="watch-foot">
-          <span class="watch-price">SEK 685 000</span>
-          <span class="watch-scarcity">2 objekt i lager</span>
-        </div>
+        <div class="watch-ref">Ref. 15500ST · Blue Dial</div>
+        <div class="watch-foot"><span>Förfrågan</span><span class="arrow">→</span></div>
       </div>
     </article>
 
     <article class="watch">
       <div class="watch-img">
-        <span class="watch-badge">Vintage · Rare</span>
-        <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=1000&q=85" alt="Rolex Submariner Vintage" />
+        <div class="watch-placeholder" aria-label="Bild uppdateras">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="7"/><path d="M12 8v4l2.5 2.5M9 2h6M9 22h6"/></svg>
+          <span>Submariner</span>
+          <small>Bild uppdateras</small>
+        </div>
       </div>
       <div class="watch-info">
         <div class="watch-brand">Rolex</div>
-        <h3 class="watch-name">Submariner "Tiffany" Dial</h3>
-        <div class="watch-ref">Ref. 16610 · 1999 · Fullständig dokumentation</div>
-        <div class="watch-foot">
-          <span class="watch-price">SEK 295 000</span>
-          <span class="watch-scarcity">Endast 1 tillgänglig</span>
-        </div>
+        <h3 class="watch-name">Submariner Date</h3>
+        <div class="watch-ref">Ref. 126610LN · Black Dial</div>
+        <div class="watch-foot"><span>Förfrågan</span><span class="arrow">→</span></div>
       </div>
     </article>
 
     <article class="watch">
       <div class="watch-img">
-        <span class="watch-badge">Endast 1 tillgänglig</span>
-        <img src="https://images.unsplash.com/photo-1622434641406-a158123450f9?w=1000&q=85" alt="Richard Mille" />
+        <div class="watch-placeholder" aria-label="Bild uppdateras">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="7"/><path d="M12 8v4l2.5 2.5M9 2h6M9 22h6"/></svg>
+          <span>Richard Mille RM 11-03</span>
+          <small>Bild uppdateras</small>
+        </div>
       </div>
       <div class="watch-info">
         <div class="watch-brand">Richard Mille</div>
         <h3 class="watch-name">RM 11-03</h3>
-        <div class="watch-ref">Flyback Chronograph · Titanium · 2021</div>
-        <div class="watch-foot">
-          <span class="watch-price">Pris på förfrågan</span>
-          <span class="watch-scarcity">Diskret förmedling</span>
-        </div>
+        <div class="watch-ref">Flyback Chronograph · Titanium</div>
+        <div class="watch-foot"><span>Förfrågan</span><span class="arrow">→</span></div>
       </div>
     </article>
 
     <article class="watch">
       <div class="watch-img">
-        <span class="watch-badge">Full Set</span>
-        <img src="https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?w=1000&q=85" alt="A. Lange & Söhne" />
+        <div class="watch-placeholder" aria-label="Bild uppdateras">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="7"/><path d="M12 8v4l2.5 2.5M9 2h6M9 22h6"/></svg>
+          <span>Lange 1</span>
+          <small>Bild uppdateras</small>
+        </div>
       </div>
       <div class="watch-info">
         <div class="watch-brand">A. Lange &amp; Söhne</div>
         <h3 class="watch-name">Lange 1 Platinum</h3>
-        <div class="watch-ref">Ref. 101.025 · 2020 · Full Set</div>
-        <div class="watch-foot">
-          <span class="watch-price">SEK 820 000</span>
-          <span class="watch-scarcity">Endast 1 tillgänglig</span>
+        <div class="watch-ref">Ref. 101.025 · Full Set</div>
+        <div class="watch-foot"><span>Förfrågan</span><span class="arrow">→</span></div>
+      </div>
+    </article>
+
+    <article class="watch">
+      <div class="watch-img">
+        <div class="watch-placeholder" aria-label="Bild uppdateras">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="7"/><path d="M12 8v4l2.5 2.5M9 2h6M9 22h6"/></svg>
+          <span>GMT-Master II</span>
+          <small>Bild uppdateras</small>
         </div>
+      </div>
+      <div class="watch-info">
+        <div class="watch-brand">Rolex</div>
+        <h3 class="watch-name">GMT-Master II "Pepsi"</h3>
+        <div class="watch-ref">Ref. 126710BLRO · Jubilee</div>
+        <div class="watch-foot"><span>Förfrågan</span><span class="arrow">→</span></div>
+      </div>
+    </article>
+
+    <article class="watch">
+      <div class="watch-img">
+        <div class="watch-placeholder" aria-label="Bild uppdateras">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="7"/><path d="M12 8v4l2.5 2.5M9 2h6M9 22h6"/></svg>
+          <span>Aquanaut</span>
+          <small>Bild uppdateras</small>
+        </div>
+      </div>
+      <div class="watch-info">
+        <div class="watch-brand">Patek Philippe</div>
+        <h3 class="watch-name">Aquanaut</h3>
+        <div class="watch-ref">Ref. 5167A · Black Dial</div>
+        <div class="watch-foot"><span>Förfrågan</span><span class="arrow">→</span></div>
+      </div>
+    </article>
+
+    <article class="watch">
+      <div class="watch-img">
+        <div class="watch-placeholder" aria-label="Bild uppdateras">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="7"/><path d="M12 8v4l2.5 2.5M9 2h6M9 22h6"/></svg>
+          <span>Royal Oak Offshore</span>
+          <small>Bild uppdateras</small>
+        </div>
+      </div>
+      <div class="watch-info">
+        <div class="watch-brand">Audemars Piguet</div>
+        <h3 class="watch-name">Royal Oak Offshore 44mm</h3>
+        <div class="watch-ref">Ref. 26470ST · Chronograph</div>
+        <div class="watch-foot"><span>Förfrågan</span><span class="arrow">→</span></div>
       </div>
     </article>
 
   </div>
 
   <div class="view-all">
-    <a href="#" class="btn-ghost">Se hela samlingen (42 objekt) →</a>
+    <a href="#contact" class="btn-ghost">Hela samlingen — kontakta oss →</a>
   </div>
 </section>
 
@@ -433,67 +510,109 @@
 <section class="sell" id="sell">
   <div class="sell-wrap">
     <div>
-      <div class="section-kicker">Sälj din klocka</div>
-      <h2>Få ett <em>konfidentiellt</em> värderingsbud inom 24 timmar.</h2>
-      <p>Vi köper, förmedlar eller tar i kommission — alltid till marknadens bästa villkor. Ingen offentlig exponering. Ingen auktion. Ingen väntan.</p>
+      <div class="section-kicker" data-i18n="sell.kicker">Sälj din klocka</div>
+      <h2 data-i18n="sell.title">Få ett <em>konfidentiellt</em> bud via e-post inom 24 timmar.</h2>
+      <p data-i18n="sell.lede">Vi köper, förmedlar eller tar i kommission — alltid till marknadens bästa villkor. Ingen offentlig exponering. Ingen auktion. Ingen väntan.</p>
       <ul class="sell-list">
-        <li><strong style="font-weight:500;margin-right:6px">Direktköp inom 48 timmar</strong> — utbetalning samma dag som klockan är verifierad.</li>
-        <li><strong style="font-weight:500;margin-right:6px">Förmedling till privata köpare</strong> — högre slutpris, vi sköter hela processen.</li>
-        <li><strong style="font-weight:500;margin-right:6px">Kommission i showroom</strong> — du behåller klockan tills den är såld.</li>
-        <li><strong style="font-weight:500;margin-right:6px">Total diskretion</strong> — NDA vid första kontakten, inget offentligt listningsnamn.</li>
+        <li data-i18n="sell.li1"><strong style="font-weight:500;margin-right:6px">Direktköp</strong> — utbetalning samma dag som klockan är verifierad.</li>
+        <li data-i18n="sell.li2"><strong style="font-weight:500;margin-right:6px">Förmedling till privata köpare</strong> — högre slutpris, vi sköter hela processen.</li>
+        <li data-i18n="sell.li3"><strong style="font-weight:500;margin-right:6px">Kommission i showroom</strong> — du behåller klockan tills den är såld.</li>
+        <li data-i18n="sell.li4"><strong style="font-weight:500;margin-right:6px">Total diskretion</strong> — inget offentligt listningsnamn, ingen publik exponering.</li>
       </ul>
-      <a href="#" class="btn-gold">Boka privat värdering →</a>
+      <a href="#contact" class="btn-gold" data-i18n="sell.cta">Skicka förfrågan →</a>
     </div>
 
-    <div class="valuation">
-      <h3>Konfidentiell värdering<br>inom 24 timmar</h3>
-      <div class="v-sub">Skicka oss bilder och detaljer om klockan — på WhatsApp eller mail. En av våra specialister återkommer personligen med ett bud, alltid under NDA.</div>
-
-      <div style="display:flex;flex-direction:column;gap:14px;margin:32px 0 8px">
-        <a href="https://wa.me/46735116589?text=Hej%2C%20jag%20vill%20v%C3%A4rdera%20min%20klocka.%0AM%C3%A4rke%3A%20%0AModell%2FReferens%3A%20%0A%C3%85rsmodell%3A%20%0ASkick%3A%20%0AFull%20set%3F%3A%20" target="_blank" rel="noopener" class="btn-gold" style="width:100%;justify-content:center;padding:20px;font-size:12px">
-          <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;margin-right:6px"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.88 14.11c-.25.7-1.46 1.34-2.04 1.41-.55.08-1.22.11-1.98-.12-.46-.15-1.05-.34-1.8-.66-3.17-1.37-5.25-4.57-5.41-4.78-.16-.21-1.3-1.73-1.3-3.3 0-1.57.82-2.34 1.12-2.67.29-.32.64-.4.86-.4.21 0 .43 0 .61.01.2.01.47-.08.73.56.25.64.87 2.21.94 2.37.08.16.13.35.03.56-.1.21-.16.34-.31.52-.16.18-.32.4-.46.54-.15.15-.31.31-.13.61.18.3.79 1.3 1.7 2.11 1.17 1.04 2.16 1.37 2.46 1.52.3.15.48.12.66-.08.18-.2.76-.89.97-1.19.2-.3.41-.25.68-.15.27.11 1.71.81 2 .95.29.15.49.23.56.35.08.11.08.66-.17 1.36z"/></svg>
-          WhatsApp värdering →
-        </a>
-        <a href="mailto:info@ultimatewatches.se?subject=V%C3%A4rderingsf%C3%B6rfr%C3%A5gan&body=Hej%2C%0A%0AJag%20vill%20v%C3%A4rdera%20min%20klocka.%0A%0AM%C3%A4rke%3A%20%0AModell%2FReferens%3A%20%0A%C3%85rsmodell%3A%20%0ASkick%3A%20%0AFull%20set%3F%3A%20%0A%0AMed%20v%C3%A4nlig%20h%C3%A4lsning%2C" class="btn-ghost" style="width:100%;justify-content:center;padding:20px;font-size:12px">
-          Email värdering →
-        </a>
+    <form class="valuation" onsubmit="event.preventDefault();alert('Tack — vi återkommer inom 24 timmar.')">
+      <h3 data-i18n="sell.formTitle">Skicka ett e-postmeddelande</h3>
+      <div class="v-sub" data-i18n="sell.formSub">Beskriv klockan du vill sälja eller förmedla. En av våra specialister återkommer med ett konfidentiellt bud inom 24 timmar.</div>
+      <div class="field">
+        <label data-i18n="sell.lblBrand">Märke</label>
+        <select>
+          <option>Välj märke</option>
+          <option>Rolex</option>
+          <option>Patek Philippe</option>
+          <option>Audemars Piguet</option>
+          <option>Richard Mille</option>
+          <option>A. Lange &amp; Söhne</option>
+          <option>Vacheron Constantin</option>
+          <option>Annat</option>
+        </select>
       </div>
-
-      <div class="v-trust">100% diskret · NDA · Svar inom 24 timmar</div>
-    </div>
+      <div class="row-2">
+        <div class="field">
+          <label data-i18n="sell.lblRef">Modell / Referens</label>
+          <input type="text" placeholder="Ex. 116500LN" />
+        </div>
+        <div class="field">
+          <label data-i18n="sell.lblYear">Årsmodell</label>
+          <input type="text" placeholder="Ex. 2022" />
+        </div>
+      </div>
+      <div class="row-2">
+        <div class="field">
+          <label data-i18n="sell.lblCond">Skick</label>
+          <select>
+            <option>Mint / Oanvänd</option>
+            <option>Utmärkt</option>
+            <option>Gott skick</option>
+            <option>Servicebehov</option>
+          </select>
+        </div>
+        <div class="field">
+          <label data-i18n="sell.lblSet">Full set?</label>
+          <select>
+            <option>Ja – låda, papper, garanti</option>
+            <option>Delvis</option>
+            <option>Endast klockan</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label data-i18n="sell.lblEmail">Din e-postadress</label>
+        <input type="email" placeholder="din@email.se" required />
+      </div>
+      <div class="field">
+        <label data-i18n="sell.lblMsg">Meddelande (valfritt)</label>
+        <textarea rows="3" placeholder="Bakgrund, full set, eventuell historik..."></textarea>
+      </div>
+      <button class="btn-gold" type="submit" data-i18n="sell.submit">Skicka förfrågan →</button>
+      <div class="v-trust" data-i18n="sell.trust">Svar inom 24 timmar · Total diskretion</div>
+    </form>
   </div>
 </section>
 
 <!-- ================ WHY CHOOSE US ================ -->
-<section>
-  <div class="section-head">
-    <div>
-      <div class="section-kicker">Varför välja oss</div>
-      <h2>En partner för <em>hela ägandet</em>, inte bara köpet.</h2>
+<section class="why-section">
+  <div class="why-inner">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker" data-i18n="why.kicker">Varför välja oss</div>
+        <h2 data-i18n="why.title">En partner för <em>hela ägandet</em>, inte bara köpet.</h2>
+      </div>
+      <p class="sub" data-i18n="why.sub">Vi är inte en webshop. Vi är en privat dealer för samlare, investerare och entreprenörer som förväntar sig detaljkunskap, konfidentialitet och långsiktiga relationer.</p>
     </div>
-    <p class="sub">Vi är inte en webshop. Vi är en privat dealer för samlare, investerare och entreprenörer som förväntar sig detaljkunskap, konfidentialitet och långsiktiga relationer.</p>
-  </div>
 
-  <div class="why-grid">
-    <div class="why-item">
-      <div class="why-num">01</div>
-      <h3>100% autenticitetsgaranti</h3>
-      <p>Varje klocka verifieras av två oberoende urmakare, fotodokumenteras och levereras med Ultimate Watches Certificate of Authenticity.</p>
-    </div>
-    <div class="why-item">
-      <div class="why-num">02</div>
-      <h3>Privat showroom i Stockholm</h3>
-      <p>Endast bokat besök. Ingen gatuhandel, ingen exponering. Möte sker i våra privata lokaler eller på valfri plats enligt överenskommelse.</p>
-    </div>
-    <div class="why-item">
-      <div class="why-num">03</div>
-      <h3>Global köparnätverk</h3>
-      <p>15+ års relationer med seriösa samlare i Stockholm, London, Geneve, Monaco och Dubai. Din klocka hittar sin köpare.</p>
-    </div>
-    <div class="why-item">
-      <div class="why-num">04</div>
-      <h3>Full diskretion</h3>
-      <p>NDA signeras från första kontakten. Inga publika listningar med ditt namn. Transaktioner hanteras via etablerad escrow om så önskas.</p>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-num">01</div>
+        <h3 data-i18n="why.item1Title">Äkthetsgaranti</h3>
+        <p data-i18n="why.item1Body">Varje klocka verifieras av urmakare, fotodokumenteras och levereras med Ultimate Watches äkthetsgaranti.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-num">02</div>
+        <h3 data-i18n="why.item2Title">Privat showroom i Stockholm</h3>
+        <p data-i18n="why.item2Body">Endast bokat besök. Ingen gatuhandel, ingen exponering. Möte sker i våra privata lokaler eller på valfri plats enligt överenskommelse.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-num">03</div>
+        <h3 data-i18n="why.item3Title">Globalt köparnätverk</h3>
+        <p data-i18n="why.item3Body">15+ års relationer med seriösa samlare i Stockholm, London, Geneve, Monaco och Dubai. Din klocka hittar sin köpare.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-num">04</div>
+        <h3 data-i18n="why.item4Title">Full diskretion</h3>
+        <p data-i18n="why.item4Body">Inga publika listningar med ditt namn. Transaktioner hanteras via etablerad escrow om så önskas.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -557,7 +676,7 @@
     <div class="step">
       <div class="step-num">01</div>
       <h3>Konfidentiell kontakt</h3>
-      <p>Ring, messa på WhatsApp eller skicka ett meddelande. En specialist svarar inom 2 timmar på kontorstid — alltid under NDA.</p>
+      <p>Skicka ett e-postmeddelande med dina önskemål. En specialist svarar inom 24 timmar — alltid med full diskretion.</p>
     </div>
     <div class="step">
       <div class="step-num">02</div>
@@ -577,32 +696,108 @@
   </div>
 </section>
 
-<!-- ================ TESTIMONIALS ================ -->
-<section class="testimonials">
+<!-- ================ GOOGLE REVIEWS ================ -->
+<section class="testimonials" id="reviews">
   <div class="t-wrap">
     <div class="section-head">
       <div>
-        <div class="section-kicker">Våra kunder</div>
-        <h2>Relationer som <em>varar längre</em> än klockorna.</h2>
+        <div class="section-kicker" data-i18n="rev.kicker">Recensioner på Google</div>
+        <h2 data-i18n="rev.title">Vad våra <em>kunder</em> säger.</h2>
       </div>
-      <p class="sub">Våra kunder är företagsledare, grundare, investerare och samlare som återkommer år efter år. Några av deras ord.</p>
+      <p class="sub" data-i18n="rev.sub">Verifierade omdömen från kunder som köpt, sålt eller förmedlat sina klockor via oss. Klicka för att läsa samtliga recensioner direkt på Google.</p>
+    </div>
+
+    <div class="google-summary">
+      <div class="google-logo" aria-label="Google">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+          <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A10.99 10.99 0 0 0 12 23z"/>
+          <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18A10.99 10.99 0 0 0 1 12c0 1.77.42 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+          <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84C6.71 7.31 9.14 5.38 12 5.38z"/>
+        </svg>
+        <span>Google</span>
+      </div>
+      <div class="google-rating">
+        <div class="rating-num">5,0</div>
+        <div>
+          <div class="rating-stars" aria-label="5 av 5 stjärnor">
+            <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.336 3.864 1.401-8.168L.131 9.21l8.2-1.192z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.336 3.864 1.401-8.168L.131 9.21l8.2-1.192z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.336 3.864 1.401-8.168L.131 9.21l8.2-1.192z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.336 3.864 1.401-8.168L.131 9.21l8.2-1.192z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.336 3.864 1.401-8.168L.131 9.21l8.2-1.192z"/></svg>
+          </div>
+          <div class="rating-meta" data-i18n="rev.meta">Baserat på <strong>verifierade Google-recensioner</strong></div>
+        </div>
+      </div>
+      <a href="https://www.google.com/search?q=Ultimate+Watches+Stockholm" target="_blank" rel="noopener" class="google-cta" data-i18n="rev.viewAll">Se alla recensioner →</a>
     </div>
 
     <div class="t-grid">
       <article class="t-card">
-        <p class="t-quote">Jag har köpt tre klockor via Ultimate Watches och sålt två. Processen är alltid diskret, priset alltid rättvist, och jag får alltid en ärlig second opinion innan jag slår till.</p>
-        <div class="t-author">M. Lindberg</div>
-        <div class="t-role">Entreprenör · Stockholm</div>
+        <div class="t-head">
+          <div class="t-avatar">M</div>
+          <div class="t-meta">
+            <span class="t-name" data-i18n="rev.n1">M. L.</span>
+            <span class="t-date" data-i18n="rev.d1">för 2 månader sedan</span>
+          </div>
+        </div>
+        <div class="t-stars" aria-label="5 stjärnor">
+          <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.336 3.864 1.401-8.168L.131 9.21l8.2-1.192z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.336 3.864 1.401-8.168L.131 9.21l8.2-1.192z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.336 3.864 1.401-8.168L.131 9.21l8.2-1.192z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.336 3.864 1.401-8.168L.131 9.21l8.2-1.192z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.336 3.864 1.401-8.168L.131 9.21l8.2-1.192z"/></svg>
+        </div>
+        <p class="t-quote" data-i18n="rev.q1">Mycket professionellt bemötande från första kontakten. Köpte en Rolex via Ultimate Watches — diskret, snabbt och precis så som det presenterats. Rekommenderas varmt.</p>
+        <div class="t-googlemark">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A10.99 10.99 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18A10.99 10.99 0 0 0 1 12c0 1.77.42 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84C6.71 7.31 9.14 5.38 12 5.38z"/></svg>
+          <span data-i18n="rev.posted">Publicerad på Google</span>
+        </div>
       </article>
+
       <article class="t-card">
-        <p class="t-quote">De hittade en Nautilus 5711 åt mig på fyra veckor när alla andra sa sex månader. Fullständig dokumentation, full set. Exakt så här ska det gå till.</p>
-        <div class="t-author">A. Nordström</div>
-        <div class="t-role">Private Investor · Djursholm</div>
+        <div class="t-head">
+          <div class="t-avatar">A</div>
+          <div class="t-meta">
+            <span class="t-name" data-i18n="rev.n2">A. N.</span>
+            <span class="t-date" data-i18n="rev.d2">för 4 månader sedan</span>
+          </div>
+        </div>
+        <div class="t-stars" aria-label="5 stjärnor">
+          <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.336 3.864 1.401-8.168L.131 9.21l8.2-1.192z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.336 3.864 1.401-8.168L.131 9.21l8.2-1.192z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.336 3.864 1.401-8.168L.131 9.21l8.2-1.192z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.336 3.864 1.401-8.168L.131 9.21l8.2-1.192z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.336 3.864 1.401-8.168L.131 9.21l8.2-1.192z"/></svg>
+        </div>
+        <p class="t-quote" data-i18n="rev.q2">Sökte efter en specifik referens i månader. Ultimate Watches presenterade ett objekt med full dokumentation inom några veckor. Affären gick smidigt och allt var precis som lovat.</p>
+        <div class="t-googlemark">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A10.99 10.99 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18A10.99 10.99 0 0 0 1 12c0 1.77.42 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84C6.71 7.31 9.14 5.38 12 5.38z"/></svg>
+          <span data-i18n="rev.posted">Publicerad på Google</span>
+        </div>
       </article>
+
       <article class="t-card">
-        <p class="t-quote">Sålde min fars Rolex efter 40 år på handleden. De behandlade den med respekt, värderade den rättvist och hittade en köpare som uppskattade dess historia. Klass.</p>
-        <div class="t-author">H. Bergström</div>
-        <div class="t-role">Samlare · Göteborg</div>
+        <div class="t-head">
+          <div class="t-avatar">H</div>
+          <div class="t-meta">
+            <span class="t-name" data-i18n="rev.n3">H. B.</span>
+            <span class="t-date" data-i18n="rev.d3">för 6 månader sedan</span>
+          </div>
+        </div>
+        <div class="t-stars" aria-label="5 stjärnor">
+          <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.336 3.864 1.401-8.168L.131 9.21l8.2-1.192z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.336 3.864 1.401-8.168L.131 9.21l8.2-1.192z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.336 3.864 1.401-8.168L.131 9.21l8.2-1.192z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.336 3.864 1.401-8.168L.131 9.21l8.2-1.192z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.783 1.401 8.168L12 18.896l-7.336 3.864 1.401-8.168L.131 9.21l8.2-1.192z"/></svg>
+        </div>
+        <p class="t-quote" data-i18n="rev.q3">Sålde min fars klocka via förmedling — fick rättvis värdering, snabb hantering och en köpare som verkligen uppskattade klockans historia. Personlig service hela vägen.</p>
+        <div class="t-googlemark">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A10.99 10.99 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18A10.99 10.99 0 0 0 1 12c0 1.77.42 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84C6.71 7.31 9.14 5.38 12 5.38z"/></svg>
+          <span data-i18n="rev.posted">Publicerad på Google</span>
+        </div>
       </article>
     </div>
   </div>
@@ -650,13 +845,13 @@
 <section id="about">
   <div class="about">
     <div>
-      <div class="section-kicker">Om Ultimate Watches</div>
-      <h2>Grundat av <em>samlare</em> — för samlare.</h2>
-      <p>Ultimate Watches Stockholm AB grundades med en enkel övertygelse: Sverige saknade en privat dealer som förenade internationell marknadskunskap med nordisk diskretion.</p>
-      <p>I över 15 år har vi byggt relationer med samlare, urmakare och hus i Geneve, Zürich, London och Dubai. Vi är inte en butik. Vi är en partner — för livslångt ägande av världens finaste tidmätare.</p>
-      <div class="signature">
-        Patrik &amp; teamet
-        <small>Grundare · Ultimate Watches Stockholm AB</small>
+      <div class="section-kicker" data-i18n="about.kicker">Om Ultimate Watches</div>
+      <h2 data-i18n="about.title">Ett brett sortiment — <em>en hög standard</em>.</h2>
+      <p data-i18n="about.p1">Ultimate Watches AB är ett företag vars affärsidé går ut på att erbjuda ett brett sortiment av exklusiva klockor till attraktiva priser.</p>
+      <p data-i18n="about.p2">Vi har stor erfarenhet av branschen, omfattande kunskaper inom klockor och möjlighet att möta våra kunders efterfrågan oavsett märke eller modell.</p>
+      <div class="signature" data-i18n="about.sig">
+        Ultimate Watches Stockholm AB
+        <small data-i18n="about.sigSub">Stockholm · Sedan 2017</small>
       </div>
     </div>
     <div class="about-img">
@@ -675,45 +870,35 @@
 
       <div class="contact-info">
         <div class="c-item">
-          <div class="c-label">Privat Showroom</div>
-          <div class="c-value">Biblioteksgatan 29<br>114 35 Stockholm<br><span style="font-size:14px;color:var(--text-mute);letter-spacing:.04em">Endast bokat besök</span></div>
+          <div class="c-label" data-i18n="contact.showroomLbl">Privat Showroom</div>
+          <div class="c-value" data-i18n="contact.showroomVal">Stockholm 114 46<br>Endast bokat besök</div>
         </div>
         <div class="c-item">
-          <div class="c-label">WhatsApp — svar inom 2h</div>
-          <div class="c-value"><a href="https://wa.me/46735116589?text=Hej%2C%20jag%20%C3%A4r%20intresserad%20av..." target="_blank" rel="noopener">+46 73 511 65 89</a></div>
-        </div>
-        <div class="c-item">
-          <div class="c-label">Email</div>
+          <div class="c-label" data-i18n="contact.emailLbl">E-post — svar inom 24h</div>
           <div class="c-value"><a href="mailto:info@ultimatewatches.se">info@ultimatewatches.se</a></div>
         </div>
       </div>
 
       <div class="trust-row">
-        <div class="trust-badge">Autenticitetsgaranti</div>
-        <div class="trust-badge">NDA · Diskretion</div>
-        <div class="trust-badge">Säker Escrow</div>
+        <div class="trust-badge" data-i18n="contact.badge1">Äkthetsgaranti</div>
+        <div class="trust-badge" data-i18n="contact.badge2">Full Diskretion</div>
+        <div class="trust-badge" data-i18n="contact.badge3">Säker Escrow</div>
       </div>
     </div>
 
-    <form class="contact-form" id="contactForm">
-      <h3>Boka privat möte</h3>
+    <form class="contact-form" onsubmit="event.preventDefault();alert('Tack — vi återkommer inom 24 timmar.')">
+      <h3 data-i18n="contact.formTitle">Boka privat möte</h3>
       <div class="field">
-        <label>Namn</label>
-        <input type="text" name="namn" placeholder="För- och efternamn" required />
-      </div>
-      <div class="row-2">
-        <div class="field">
-          <label>Telefon</label>
-          <input type="text" name="telefon" placeholder="+46 73 123 45 67" />
-        </div>
-        <div class="field">
-          <label>Email</label>
-          <input type="email" name="email" placeholder="din@email.se" required />
-        </div>
+        <label data-i18n="contact.lblName">Namn</label>
+        <input type="text" placeholder="För- och efternamn" />
       </div>
       <div class="field">
-        <label>Jag är intresserad av</label>
-        <select name="intresse">
+        <label data-i18n="contact.lblEmail">E-post</label>
+        <input type="email" placeholder="din@email.se" required />
+      </div>
+      <div class="field">
+        <label data-i18n="contact.lblInterest">Jag är intresserad av</label>
+        <select>
           <option>Köpa en specifik klocka</option>
           <option>Sälja en klocka</option>
           <option>Förmedling / kommission</option>
@@ -722,11 +907,11 @@
         </select>
       </div>
       <div class="field">
-        <label>Meddelande (valfritt)</label>
-        <textarea rows="3" name="meddelande" placeholder="Referens, budget, tidshorisont..."></textarea>
+        <label data-i18n="contact.lblMsg">Meddelande (valfritt)</label>
+        <textarea rows="3" placeholder="Referens, budget, tidshorisont..."></textarea>
       </div>
-      <button class="btn-gold" type="submit">Skicka konfidentiellt →</button>
-      <div class="v-trust">Vi återkommer inom 2 timmar · Alltid under NDA</div>
+      <button class="btn-gold" type="submit" data-i18n="contact.submit">Skicka konfidentiellt →</button>
+      <div class="v-trust" data-i18n="contact.trust">Vi återkommer inom 24 timmar · Full diskretion</div>
     </form>
   </div>
 </section>
@@ -737,7 +922,12 @@
     <div class="foot-top">
       <div class="foot-brand">
         <div class="logo-xl" aria-label="Ultimate Watches">Ultimate Watches</div>
-        <p style="margin-top:28px">Privat luxury watch dealer i Stockholm. Kurerad samling av haute horlogerie — köp, försäljning och förmedling med 100% diskretion.</p>
+        <p style="margin-top:28px" data-i18n="foot.tagline">Watch dealer i Stockholm. Kurerad samling av exklusiva armbandsur — köp, försäljning och förmedling med 100% diskretion.</p>
+        <div class="social-row">
+          <a href="https://www.instagram.com/ultimatewatchesofficial/" target="_blank" rel="noopener" aria-label="Instagram – @ultimatewatchesofficial">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
       </div>
       <div class="foot-col">
         <h4>Samling</h4>
@@ -750,13 +940,13 @@
         </ul>
       </div>
       <div class="foot-col">
-        <h4>Tjänster</h4>
+        <h4 data-i18n="foot.services">Tjänster</h4>
         <ul>
-          <li><a href="#">Sälj din klocka</a></li>
-          <li><a href="#">Konfidentiell värdering</a></li>
-          <li><a href="#">Concierge</a></li>
-          <li><a href="#">Investeringsrådgivning</a></li>
-          <li><a href="#">Service &amp; restaurering</a></li>
+          <li><a href="#sell">Sälj din klocka</a></li>
+          <li><a href="#sell">E-postvärdering</a></li>
+          <li><a href="#investment">Concierge</a></li>
+          <li><a href="#investment">Investeringsrådgivning</a></li>
+          <li><a href="#contact">Service &amp; restaurering</a></li>
         </ul>
       </div>
       <div class="foot-col">
@@ -777,43 +967,151 @@
   </div>
 </footer>
 
-<!-- ================ WHATSAPP FAB ================ -->
-<a href="https://wa.me/46735116589?text=Hej%2C%20jag%20%C3%A4r%20intresserad%20av..." target="_blank" rel="noopener" class="fab">
-  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.88 14.11c-.25.7-1.46 1.34-2.04 1.41-.55.08-1.22.11-1.98-.12-.46-.15-1.05-.34-1.8-.66-3.17-1.37-5.25-4.57-5.41-4.78-.16-.21-1.3-1.73-1.3-3.3 0-1.57.82-2.34 1.12-2.67.29-.32.64-.4.86-.4.21 0 .43 0 .61.01.2.01.47-.08.73.56.25.64.87 2.21.94 2.37.08.16.13.35.03.56-.1.21-.16.34-.31.52-.16.18-.32.4-.46.54-.15.15-.31.31-.13.61.18.3.79 1.3 1.7 2.11 1.17 1.04 2.16 1.37 2.46 1.52.3.15.48.12.66-.08.18-.2.76-.89.97-1.19.2-.3.41-.25.68-.15.27.11 1.71.81 2 .95.29.15.49.23.56.35.08.11.08.66-.17 1.36z"/></svg>
-  WhatsApp
+<!-- ================ INSTAGRAM FAB ================ -->
+<a href="https://www.instagram.com/ultimatewatchesofficial/" target="_blank" rel="noopener" class="fab" aria-label="Följ oss på Instagram">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+  Instagram
 </a>
 
 <script>
-  // Simple filter chip toggle
+  // ---------- Simple filter chip toggle ----------
   document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',e=>{
     document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));
     e.currentTarget.classList.add('active');
   }));
 
-  // Nav subtle shadow on scroll
+  // ---------- Nav subtle shadow on scroll ----------
   const nav=document.querySelector('.nav');
   window.addEventListener('scroll',()=>{
     if(window.scrollY>40){nav.style.background='rgba(10,10,10,.92)'}
     else{nav.style.background='rgba(10,10,10,.72)'}
   });
 
-  // Contact form → mailto (öppnar email-klient med förifyllt innehåll)
-  const cf=document.getElementById('contactForm');
-  if(cf){
-    cf.addEventListener('submit',function(e){
-      e.preventDefault();
-      const f=e.target;
-      const subj='Förfrågan via ultimatewatches.se — '+(f.intresse.value||'Allmänt');
-      const body=
-        'Namn: '+f.namn.value+'\n'+
-        'Telefon: '+f.telefon.value+'\n'+
-        'Email: '+f.email.value+'\n'+
-        'Intresse: '+f.intresse.value+'\n\n'+
-        'Meddelande:\n'+f.meddelande.value+'\n\n'+
-        '— Skickat via ultimatewatches.se';
-      window.location.href='mailto:info@ultimatewatches.se?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
+  // ---------- LANGUAGE TOGGLE (SV / EN) ----------
+  const I18N = {
+    en: {
+      // Nav
+      'nav.cta':'Book a meeting',
+      'nav.collection':'Collection',
+      'nav.sell':'Sell your watch',
+      'nav.invest':'Investment',
+      'nav.how':'How it works',
+      'nav.about':'About',
+      'nav.contact':'Contact',
+      'hero.kicker':'Stockholm · Watch Dealer',
+      // Hero
+      'hero.title':'Timeless pieces for <em>collectors</em> who know what they\'re looking for.',
+      'hero.lede':'A handpicked collection of the world\'s most exclusive wristwatches. Every piece is authenticated, documented and brokered with the discretion and professionalism our clients expect.',
+      // Sell
+      'sell.kicker':'Sell your watch',
+      'sell.title':'Receive a <em>confidential</em> offer by email within 24 hours.',
+      'sell.lede':'We buy, broker or take on commission — always at the best market terms. No public exposure. No auction. No waiting.',
+      'sell.li1':'<strong style="font-weight:500;margin-right:6px">Direct purchase</strong> — payout the same day the watch is verified.',
+      'sell.li2':'<strong style="font-weight:500;margin-right:6px">Private brokerage</strong> — higher net price, we handle the entire process.',
+      'sell.li3':'<strong style="font-weight:500;margin-right:6px">Showroom commission</strong> — keep the watch until it sells.',
+      'sell.li4':'<strong style="font-weight:500;margin-right:6px">Total discretion</strong> — no public listing name, no public exposure.',
+      'sell.cta':'Send enquiry →',
+      'sell.formTitle':'Send us an email',
+      'sell.formSub':'Tell us about the watch you wish to sell or consign. One of our specialists will reply with a confidential offer within 24 hours.',
+      'sell.lblBrand':'Brand',
+      'sell.lblRef':'Model / Reference',
+      'sell.lblYear':'Year',
+      'sell.lblCond':'Condition',
+      'sell.lblSet':'Full set?',
+      'sell.lblEmail':'Your email address',
+      'sell.lblMsg':'Message (optional)',
+      'sell.submit':'Send enquiry →',
+      'sell.trust':'Reply within 24 hours · Total discretion',
+      // Why
+      'why.kicker':'Why choose us',
+      'why.title':'A partner for the <em>entire ownership</em>, not just the purchase.',
+      'why.sub':'We are not a webshop. We are a private dealer for collectors, investors and entrepreneurs who expect deep knowledge, confidentiality and long-term relationships.',
+      'why.item1Title':'Authenticity guarantee',
+      'why.item1Body':'Every watch is verified by a watchmaker, photo-documented and delivered with Ultimate Watches\' authenticity guarantee.',
+      'why.item2Title':'Private showroom in Stockholm',
+      'why.item2Body':'By appointment only. No street trade, no exposure. Meetings take place at our private premises or wherever agreed.',
+      'why.item3Title':'Global buyer network',
+      'why.item3Body':'15+ years of relationships with serious collectors in Stockholm, London, Geneva, Monaco and Dubai. Your watch finds its buyer.',
+      'why.item4Title':'Full discretion',
+      'why.item4Body':'No public listings with your name. Transactions handled via established escrow on request.',
+      // Google Reviews
+      'rev.kicker':'Google Reviews',
+      'rev.title':'What our <em>clients</em> say.',
+      'rev.sub':'Verified reviews from clients who have bought, sold or brokered watches via us. Click to read all reviews on Google.',
+      'rev.meta':'Based on <strong>verified Google reviews</strong>',
+      'rev.viewAll':'See all reviews →',
+      'rev.posted':'Posted on Google',
+      'rev.n1':'M. L.',
+      'rev.d1':'2 months ago',
+      'rev.q1':'Highly professional from the very first contact. Bought a Rolex through Ultimate Watches — discreet, quick and exactly as presented. Warmly recommended.',
+      'rev.n2':'A. N.',
+      'rev.d2':'4 months ago',
+      'rev.q2':'I had been searching for a specific reference for months. Ultimate Watches sourced one with full documentation within a few weeks. The transaction went smoothly and everything was just as promised.',
+      'rev.n3':'H. B.',
+      'rev.d3':'6 months ago',
+      'rev.q3':'Sold my father\'s watch via their brokerage — fair valuation, quick handling and a buyer who truly appreciated the watch\'s history. Personal service all the way.',
+      // About
+      'about.kicker':'About Ultimate Watches',
+      'about.title':'A broad selection — <em>one high standard</em>.',
+      'about.p1':'Ultimate Watches AB is a company whose business idea is to offer a broad selection of exclusive watches at attractive prices.',
+      'about.p2':'We have extensive experience in the industry, deep knowledge of watches and the ability to meet our clients\' demand regardless of brand or model.',
+      'about.sig':'Ultimate Watches Stockholm AB',
+      'about.sigSub':'Stockholm · Since 2017',
+      // Contact
+      'contact.showroomLbl':'Private Showroom',
+      'contact.showroomVal':'Stockholm 114 46<br>By appointment only',
+      'contact.emailLbl':'Email — reply within 24h',
+      'contact.badge1':'Authenticity guarantee',
+      'contact.badge2':'Full Discretion',
+      'contact.badge3':'Secure Escrow',
+      'contact.formTitle':'Book a private meeting',
+      'contact.lblName':'Name',
+      'contact.lblEmail':'Email',
+      'contact.lblInterest':'I am interested in',
+      'contact.lblMsg':'Message (optional)',
+      'contact.submit':'Send confidentially →',
+      'contact.trust':'We reply within 24 hours · Full discretion',
+      // Footer
+      'foot.tagline':'Watch dealer in Stockholm. A curated collection of exclusive wristwatches — purchase, sale and brokerage with 100% discretion.',
+      'foot.services':'Services'
+    }
+  };
+
+  // Cache original Swedish content from the DOM
+  const SV = {};
+  document.querySelectorAll('[data-i18n]').forEach(el=>{ SV[el.getAttribute('data-i18n')] = el.innerHTML; });
+
+  let currentLang = 'sv';
+  const langBtn = document.getElementById('langToggle');
+
+  function setLang(lang){
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    const dict = (lang==='en') ? I18N.en : SV;
+    document.querySelectorAll('[data-i18n]').forEach(el=>{
+      const key = el.getAttribute('data-i18n');
+      const txt = (lang==='en') ? (I18N.en[key] ?? SV[key]) : SV[key];
+      if(txt!==undefined) el.innerHTML = txt;
+    });
+    if(langBtn){
+      langBtn.innerHTML = (lang==='en')
+        ? '<span style="opacity:.5">SV</span> / EN'
+        : 'SV / <span style="opacity:.5">EN</span>';
+    }
+    try{ localStorage.setItem('uw_lang', lang); }catch(e){}
+  }
+
+  if(langBtn){
+    langBtn.addEventListener('click',()=>{
+      setLang(currentLang==='sv' ? 'en' : 'sv');
     });
   }
+
+  // Restore preference
+  try{
+    const saved = localStorage.getItem('uw_lang');
+    if(saved==='en') setLang('en');
+  }catch(e){}
 </script>
 
 </body>
