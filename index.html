@@ -210,14 +210,15 @@
   .t-googlemark{margin-top:22px;display:inline-flex;align-items:center;gap:8px;font-size:11px;color:var(--text-mute);letter-spacing:.06em}
   .t-googlemark svg{width:14px;height:14px}
 
-  /* ---------- RECENTLY SOLD ---------- */
+  /* ---------- RECENT OBJECTS ---------- */
   .sold-track{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
   @media(max-width:1000px){.sold-track{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:600px){.sold-track{grid-template-columns:1fr}}
-  .sold{background:var(--bg-2);border:1px solid var(--line);overflow:hidden;position:relative}
-  .sold-img{aspect-ratio:1/1;overflow:hidden;position:relative;opacity:.82}
-  .sold-img img{width:100%;height:100%;object-fit:cover;filter:grayscale(.15)}
-  .sold-img::after{content:"SÅLD";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-8deg);font-family:var(--display);font-size:38px;color:rgba(201,169,97,.9);letter-spacing:.3em;border:1px solid var(--gold-2);padding:8px 22px;background:rgba(10,10,10,.55)}
+  .sold{background:var(--bg-2);border:1px solid var(--line);overflow:hidden;position:relative;transition:border-color .4s}
+  .sold:hover{border-color:var(--gold)}
+  .sold-img{aspect-ratio:1/1;overflow:hidden;position:relative;background:var(--bg-3)}
+  .sold-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
+  .sold:hover .sold-img img{transform:scale(1.04)}
   .sold-info{padding:18px 20px;font-size:13px;color:var(--text-mute)}
   .sold-info strong{color:var(--text);font-weight:400;font-family:var(--display);font-size:17px;display:block;margin-bottom:4px}
 
@@ -298,7 +299,7 @@
 <!-- ================ HERO ================ -->
 <header class="hero">
   <div class="hero-media">
-    <img src="https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=2000&q=85" alt="Luxury watch close-up" />
+    <img src="5990.jpg" alt="Patek Philippe Nautilus 5990" />
   </div>
   <div class="hero-inner">
     <div class="kicker" data-i18n="hero.kicker">Stockholm · Watch Dealer</div>
@@ -621,7 +622,7 @@
 <section id="investment">
   <div class="invest">
     <div class="invest-img">
-      <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=1400&q=85" alt="Watch investment" />
+      <img src="about-patek.jpg" alt="Patek Philippe Nautilus close-up" />
     </div>
     <div>
       <div class="section-kicker">Watch Investment</div>
@@ -804,40 +805,40 @@
   </div>
 </section>
 
-<!-- ================ RECENTLY SOLD ================ -->
+<!-- ================ RECENT OBJECTS ================ -->
 <section>
   <div class="section-head">
     <div>
-      <div class="section-kicker">Recently Sold</div>
-      <h2>Ett urval av <em>nyligen förmedlade</em> objekt.</h2>
+      <div class="section-kicker" data-i18n="recent.kicker">Aktuella objekt</div>
+      <h2 data-i18n="recent.title">Ett urval av <em>aktuella</em> objekt.</h2>
     </div>
-    <p class="sub">Social proof över alla ord. Här är ett urval av klockor vi förmedlat senaste kvartalet. Alla priser dokumenterade. Alla köpare verifierade.</p>
+    <p class="sub" data-i18n="recent.sub">Ett kuraterat urval ur den aktuella samlingen. Varje objekt är autentiserat, dokumenterat och tillgängligt för förfrågan.</p>
   </div>
 
   <div class="sold-track">
     <article class="sold">
       <div class="sold-img">
-        <img src="https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?w=800&q=85" alt="Sold watch" />
+        <img src="rolex-daytona-126518.jpg" alt="Rolex Daytona 126518" />
       </div>
-      <div class="sold-info"><strong>Rolex GMT-Master II "Pepsi"</strong>Såld · Q1 2026</div>
+      <div class="sold-info"><strong>Rolex Daytona</strong>Ref. 126518</div>
     </article>
     <article class="sold">
       <div class="sold-img">
-        <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=800&q=85" alt="Sold watch" />
+        <img src="patek-nautilus-7010r.jpg" alt="Patek Philippe Nautilus 7010R" />
       </div>
-      <div class="sold-info"><strong>Patek Philippe Aquanaut 5167A</strong>Såld · Q1 2026</div>
+      <div class="sold-info"><strong>Patek Philippe Nautilus</strong>Ref. 7010R</div>
     </article>
     <article class="sold">
       <div class="sold-img">
-        <img src="https://images.unsplash.com/photo-1519439955468-1ee737acaef3?w=800&q=85" alt="Sold watch" />
+        <img src="patek-nautilus-5712-1a.jpg" alt="Patek Philippe Nautilus 5712/1A" />
       </div>
-      <div class="sold-info"><strong>AP Royal Oak Offshore 44mm</strong>Såld · Q4 2025</div>
+      <div class="sold-info"><strong>Patek Philippe Nautilus</strong>Ref. 5712/1A</div>
     </article>
     <article class="sold">
       <div class="sold-img">
-        <img src="https://images.unsplash.com/photo-1533139502658-0198f920d8e8?w=800&q=85" alt="Sold watch" />
+        <img src="hermes-k20-mini-ostrich.jpg" alt="Hermès K20 MINI Ostrich Leather" />
       </div>
-      <div class="sold-info"><strong>Omega Speedmaster "Snoopy"</strong>Såld · Q4 2025</div>
+      <div class="sold-info"><strong>Hermès K20 &ldquo;MINI&rdquo;</strong>Ostrich Leather</div>
     </article>
   </div>
 </section>
@@ -1051,6 +1052,10 @@
       'rev.n3':'A.',
       'rev.d3':'3 months ago',
       'rev.q3':'Richard was knowledgeable and pleasant. Delivered exactly what was promised. My next watch purchase will most likely go through UW! Thumbs up.',
+      // Recent objects
+      'recent.kicker':'Recent Objects',
+      'recent.title':'A selection of <em>current</em> objects.',
+      'recent.sub':'A curated selection from our current collection. Every piece is authenticated, documented and available on request.',
       // About
       'about.kicker':'About Ultimate Watches',
       'about.title':'A broad selection — <em>one high standard</em>.',
